@@ -1,0 +1,19 @@
+[build]
+  base = "/"
+  command = "npm run generate-multi"
+  publish = "build"
+
+# Project 1 deployment (project1.example.com)
+[[redirects]]
+  from = "https://project1.example.com/*"
+  to = "/project1/:splat"
+  status = 200
+
+[context.production.environment]
+  PROJECTS = "project1,project2"
+
+# Project 2 deployment (project2.example.com)
+[[redirects]]
+  from = "https://project2.example.com/*"
+  to = "/project2/:splat"
+  status = 200

@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "generate-multi": "PROJECT_NAME=project1 npm run generate && mv .output/public build/project1 && PROJECT_NAME=project2 npm run generate && mv .output/public build/project2"
   },
   "dependencies": {
     "@directus/sdk": "^19.0.1",
