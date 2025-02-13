@@ -1,10 +1,10 @@
 <template>
   <div>
     <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <NuxtPage />
   </div>
 </template>
 <script setup>
-const { $directus } = useNuxtApp();
-console.log($directus);
+const { $projectContent } = useNuxtApp();
+console.log($projectContent);
 </script>
