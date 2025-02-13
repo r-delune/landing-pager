@@ -18,3 +18,11 @@ npm install
 npm run build
 
 # The .output directory will be automatically deployed by Netlify
+
+# Build project1
+PROJECT_NAME=project1 npm run generate
+mv .output/public build/project1
+
+# Build project2
+PROJECT_NAME=project2 npm run generate
+mv .output/public build/project2

@@ -1,23 +1,24 @@
 <template>
-    <div>
-      <h1>Landing Page for {{ config.public.PROJECT_NAME }}</h1>
-      <div v-html="renderedMarkdown"></div>
-      <img v-if="projectImage" :src="projectImage" alt="Project Image">
-    </div>
-  </template>
-  
-  <script setup>
-  import { marked } from 'marked';
-  const { $projectContent, $projectAssetsPath } = useNuxtApp();
-  const config = useRuntimeConfig();
-  
-  // Convert Markdown to HTML
-  const renderedMarkdown = marked($projectContent);
-  
-  // Example: Load an image from the project's assets folder
-  const projectImage = $projectAssetsPath ? `${$projectAssetsPath}/logo.webp` : null;
-  </script>
-  
-  <style scoped>
-  /* Additional styles can be added */
-  </style>
+  <div class="container mx-auto px-4 py-8">
+    <h1>Project: {{ config.public.PROJECT_NAME }}</h1>
+    <ContentDoc :path="`/${config.public.PROJECT_NAME}/index`">
+      <template #default="{ doc }">
+        <ContentRenderer v-if="doc" :value="doc" />
+      </template>
+      <template #not-found>
+        <p>No content found for this project.</p>
+      </template>
+      <template #loading>
+        <p>Loading...</p>
+      </template>
+    </ContentDoc>
+  </div>
+</template>
+
+<script setup lang="ts">
+const config = useRuntimeConfig()
+</script>
+
+<style scoped>
+/* Additional styles can be added */
+</style>
