@@ -15,7 +15,7 @@
   const renderedMarkdown = marked($projectContent);
   
   // Example: Load an image from the project's assets folder
-  const projectImage = $projectAssetsPath ? `${$projectAssetsPath}/example.jpg` : null;
+  const projectImage = $projectAssetsPath ? `${$projectAssetsPath}/logo.webp` : null;
   </script>
   
   <style scoped>
