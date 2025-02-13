@@ -1,6 +1,16 @@
 # Nuxt Minimal Starter
 
-# landing_pager
+# BUILD
+pnpm run build
+
+# RUN
+pnpm run dev
+
+
+# ADD A NEW SITE
+build script should be /build_all.sh
+add PROJECT_NAME=project3 to .env
+add a new redirect in netlify.toml
 
 
 BUILD BOTH PROJECTS
